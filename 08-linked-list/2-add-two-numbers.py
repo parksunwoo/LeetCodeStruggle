@@ -1,42 +1,36 @@
 # Definition for singly-linked list.
-from typing import Collection
-
-from collections import deque
-
 class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
-        
 class Solution:
-    def isPalindrome(self, head: ListNode) -> bool:
-        # q: List = []
-        q: Deque = deque()
+    def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
+        root = head = ListNode(0)
         
-        if not head:
-            return True
+        carry = 0
+        while l1 or l2 or carry:
+            sum =0
+            if l1:
+                sum += l1.val
+                l1 = l1.next
+            if l2:
+                sum += l2.val
+                l2 = l2.next
+                
+            carry, val = divmod(sum + carry, 10)
+            head.next = ListNode(val)
+            head = head.next
+        return root.next
         
-        node= head
-        while node is not None:
-            q.append(node.val)
-            node = node.next 
-            
-        while len(q) > 1:
-            # if q.pop(0) != q.pop():
-                # return False
-            if q.popleft() != q.pop():
-                return False
-            
-        return True
                     
-        
-                          
+
 if __name__ == '__main__':
     # begin
     s = Solution()
-    head = [1,2,2,1]
-    print (s.isPalindrome(head))
-    
+    l1 = [2,4,3], l2 = [5,6,4]
+    print (s.addTwoNumbers(l1, l2))
+    # Output: [7,0,8]
+
     
     
     

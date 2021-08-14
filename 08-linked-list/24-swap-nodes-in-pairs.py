@@ -14,19 +14,26 @@ class Solution:
             # cur = cur.next.next
         # return head
         
-        root = prev = ListNode(None)
-        prev.next = head
-        while head and head.next:
-            b = head.next
-            head.next = b.next
-            b.next = head
+        # root = prev = ListNode(None)
+        # prev.next = head
+        # while head and head.next:
+            # b = head.next
+            # head.next = b.next
+            # b.next = head
             
-            prev.next = b
+            # prev.next = b
             
-            head = head.next
-            prev = prev.next.next
-            
-        return root.next
+            # head = head.next
+            # prev = prev.next.next
+        # return root.next
+        
+        if head and head.next:
+            p = head.next
+            head.next = self.swapPairs(p.next)
+            p.next = head
+            return p
+        return head
+        
         
 if __name__ == '__main__':
     # begin
