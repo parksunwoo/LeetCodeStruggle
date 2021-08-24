@@ -3,29 +3,30 @@ from typing import Collection, Optional
 from collections import deque
 
 class Solution:
-    def isValid(self, s: str) -> bool:
-        stack = []
-        table = {
-            ')': '(',
-            '}': '{',
-            ']': '[',
-        }
+    def removeDuplicateLetters(self, s: str) -> str:
         
-        for char in s:
-            print('1'*80)
+        print('1'*80)
+        print(sorted(set(s)))
+        for char in sorted(set(s)):
+            suffix = s[s.index(char):]
+            print('2'*80)
             print(char)
-            if char not in table:
-                print('2'*80)
-                stack.append(char)
-            elif not stack or table[char] != stack.pop():
+            print(s.index(char))
+            print(s[s.index(char):])
+            if set(s) == set(suffix):
                 print('3'*80)
-                print(table[char])
-                return False
-        return len(stack) == 0
-                        
+                print(set(s))
+                print(set(suffix))
+                return char + self.removeDuplicateLetters(suffix.replace(char, ''))
+        return ''
+
+
+
+                
 if __name__ == '__main__':
     # begin
     sol = Solution()
-    s = "()[]{}"
-    print (sol.isValid(s))
+    s = "bcabc"
+    # s = "cbacdcbc"
+    print (sol.removeDuplicateLetters(s))
     
