@@ -90,6 +90,8 @@ class MyCircularDeque:
         Checks whether the circular deque is full or not.
         """
         return self.len == self.k        
+    
+    
         
 if __name__ == '__main__':
     obj = MyCircularDeque(k)
