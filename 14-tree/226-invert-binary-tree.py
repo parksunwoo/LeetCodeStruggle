@@ -29,6 +29,7 @@ class Solution:
                 queue.append(node.right)
                 
         return root
+    
         
 if __name__ == '__main__':
     sol = Solution()

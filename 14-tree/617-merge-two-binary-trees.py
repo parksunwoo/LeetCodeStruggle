@@ -21,7 +21,6 @@ class Solution:
         else:
             return root1 or root2
 
-
 if __name__ == '__main__':
     sol = Solution()
     root1 = [1,3,2,5]
