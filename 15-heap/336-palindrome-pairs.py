@@ -58,18 +58,16 @@ class Trie:
 
 class Solution:
     def palindromePairs(self, words: List[str]) -> List[List[int]]:
-
+        trie = Trie()
         
-        output = []
-        for i, word1 in enumerate(words):
-            for j, word2 in enumerate(words):
-                if i == j:
-                    continue
-                if is_palindrome(word1 + word2):
-                    output.append([i, j])
-
-        return output
-
+        for i, word in enumerate(words):
+            trie.insert(i, word)
+            
+        results = []
+        for i, word in enumerate(words):
+            results.extend(trie.search(i, word))
+            
+        return results
 
         
 # Your Codec object will be instantiated and called as such:
