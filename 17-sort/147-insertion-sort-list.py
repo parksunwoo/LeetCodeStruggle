@@ -4,16 +4,24 @@ import itertools
 import heapq
 import sys
 
+# Definition for singly-linked list.
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
 class Solution:
-    def merge(self, intervals: List[List[int]]) -> List[List[int]]:
-        merged = []
-        for i in sorted(intervals, key=lambda x: x[0]):
-            if merged and i[0] <= merged[-1][1]:
-                merged[-1][1] = max(merged[-1][1], i[1])
-            else:
-                merged += i,
+    def insertionSortList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        cur = parent = ListNode(0)
+        while head:
+            while cur.next and cur.next.val < head.val:
+                cur = cur.next
                 
-        return merged
+            cur.next, head.next, head = head, cur.next, head.next
+            
+            if head and cur.val > head.val:
+                cur = parent
+                
+        return parent.next
         
         
         
