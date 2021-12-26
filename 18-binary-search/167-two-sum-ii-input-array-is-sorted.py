@@ -18,20 +18,19 @@ class Solution:
         #         return left + 1, right + 1
         
         #sol2.
-        for k, v in enumerate(numbers):
-            left, right = k+1, len(numbers) -1
-            expected = target -v
+        # for k, v in enumerate(numbers):
+        #     left, right = k+1, len(numbers) -1
+        #     expected = target -v
             
-            while left <= right:
-                mid = left + (right - left) //2
-                if numbers[mid] < expected:
-                    left = mid + 1
-                elif numbers[mid] > expected:
-                    right = mid -1
-                else:
-                    return k+1, mid +1
+        #     while left <= right:
+        #         mid = left + (right - left) //2
+        #         if numbers[mid] < expected:
+        #             left = mid + 1
+        #         elif numbers[mid] > expected:
+        #             right = mid -1
+        #         else:
+        #             return k+1, mid +1
                     
-        
         #sol3.
         for k, v in enumerate(numbers):
             expected = target -v 
@@ -39,7 +38,8 @@ class Solution:
             if i < len(numbers) and numbers[i] == expected:
                 return k+1, i+1
         
-        
+
+
 # Your Codec object will be instantiated and called as such:
 if __name__ == '__main__':
     numbers = [2,3,4]
