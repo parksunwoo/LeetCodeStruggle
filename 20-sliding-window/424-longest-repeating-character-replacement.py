@@ -14,7 +14,7 @@ class Solution:
             counts[s[right-1]] += 1
             max_char_n = counts.most_common(1)[0][1]
             
-            print(counts.most_common(1)[0])
+            # print(counts.most_common(1)[0])
             
             if right - left - max_char_n > k:
                 counts[s[left]] -= 1
