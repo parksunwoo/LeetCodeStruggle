@@ -31,6 +31,6 @@ class Solution:
 
 # Your Codec object will be instantiated and called as such:
 if __name__ == '__main__':
-    expression = "2-1-1"
+    expression = "2*3-4*5"
     sol = Solution()
     print(sol.diffWaysToCompute(expression))
