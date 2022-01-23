@@ -2,7 +2,7 @@ import collections
 from tkinter import N
 from turtle import left, right
 from typing import Collection, Optional, List, Set
-import numpy
+
 
 
 class Solution:
@@ -40,7 +40,11 @@ class Solution:
         # return x
         
         # sol 5.
-        M = np.matri
+        M = np.matrix([[0,1], [1,1]])
+        vec = np.array([[0], [1]])
+        
+        return np.matmul(M **n, vec)[0]
+        
         
         
 # Your Codec object will be instantiated and called as such:
