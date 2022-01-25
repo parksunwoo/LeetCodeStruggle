@@ -5,12 +5,12 @@ from typing import Collection, Optional, List, Set
 
 class Solution:
     def partition(self, head: Optional[ListNode], x: int) -> Optional[ListNode]:
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
         
                 
 # Your Codec object will be instantiated and called as such:
