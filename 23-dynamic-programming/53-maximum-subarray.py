@@ -6,6 +6,7 @@ from typing import Collection, Optional, List, Set
 
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
+        # sol 1
         # for i in range(1, len(nums)):
         #     nums[i] += (nums[i-1] if nums[i-1] > 0 else 0)
         # return max(nums)
